@@ -1,0 +1,14 @@
+{
+  "name": "regexp_check_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "koide-g",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.8.0"
+  }
+}
