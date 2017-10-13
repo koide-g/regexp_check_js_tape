@@ -1,7 +1,7 @@
 // const regexp = /^[^\x00-\x1F "#\$%\&'\*,\.\/:;<=>\?\[\\\]\^`\{\|\}~\x7F](?:[^\x00-\x1F"#\$%\&'\*,\/:;<=>\?\[\\\]\^`\{\|\}~\x7F]*[^\x00-\x1F "#\$%\&'\*,\/:;<=>\?\[\\\]\^`\{\|\}~\x7F])?$/
 
 const allow_start_regexp = /^[^\x00-\x1F "#\$%\&'\*,\.\/:;<=>\?\[\\\]\^`\{\|\}~\x7F]/
-const allow_anywhere_regexp = /[^\x00-\x1F"#\$%\&'\*,\/:;<=>\?\[\\\]\^`\{\|\}~\x7F]*/
+const allow_anywhere_regexp = /[^\x00-\x1F"#\$%\&'\*,\/:;<=>\?\[\\\]\^`\{\|\}~\x7F]/
 const allow_last_regexp = /[^\x00-\x1F "#\$%\&'\*,\/:;<=>\?\[\\\]\^`\{\|\}~\x7F]$/
 const test = require('tape')
 
@@ -105,9 +105,9 @@ test('space 行中半角スペース 全角スペースはOK', function (t) {
 
 test('meta_char 制御文字はOK', function (t) {
   // \x00-\x1F\x7F
-  t.equal(allow_anywhere_pattern("\x00"), true) // jsでは許容
-  t.equal(allow_anywhere_pattern("\x1F"), true) // jsでは許容
-  t.equal(allow_anywhere_pattern("\x7F"), true) // jsでは許容
+  t.equal(allow_anywhere_pattern("\x00"), false)
+  t.equal(allow_anywhere_pattern("\x1F"), false)
+  t.equal(allow_anywhere_pattern("\x7F"), false)
 
   t.end()
 })
