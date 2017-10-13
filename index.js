@@ -24,16 +24,6 @@ var allow_anywhere_pattern = function (pattern) {
 var allow_last_pattern = function (pattern) {
   return !!allow_last_regexp.test(pattern)
 }
-// https://github.com/cloudlatex-team/cloudlatex2/blob/b86d7e1d53f51c462704aaaa3e4a30d24b87cde6/gulp/app/react/components/projects/edit/FileNameDialog.jsx#L26-L30
-// と
-// https://github.com/cloudlatex-team/cloudlatex2/blob/b86d7e1d53f51c462704aaaa3e4a30d24b87cde6/gulp/app/react/components/projects/ProjectsDialog.jsx#L57-L61
-//
-// この部分を 1->3->2 でチェック、2で漏れてもサーバサイドで弾くようにする
-// } else if ( event.target.value.match(/^[a-zA-Z0-9ａ-ｚＡ-Ｚ０-９（）【】「」＜＞！”＃＄％＆’＝｜＊＋？＿｛｝［］〈〉《》、。・￥＠：；／＼_\-\(\)!\*ぁ-んァ-ヶー \^@=\+\{\}\[\]][a-zA-Z0-9ａ-ｚＡ-Ｚ０-９（）【】「」＜＞！”＃＄％＆’＝｜＊＋？＿｛｝［］〈〉《》、。・￥＠：；／＼_\-\(\)!\*ぁ-んァ-ヶー \^@=\+\{\}\[\]\.]*$/)) {
-//   this.setState({ errorText: '', submittable: true });
-// } else {
-//   this.setState({ errorText: t('view:editor.invalid_filename'), submittable: false });
-// }
 
 
 test('forbidden_start: 先頭禁止パタン', function (t) {
